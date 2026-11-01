@@ -23,10 +23,10 @@ jobs:
         working-directory: Jarvis
         run: gradle assembleDebug --no-daemon
       - name: Renombrar APK
-        run: cp Jarvis/app/build/outputs/apk/debug/app-debug.apk Jarvis/Jarvis.apk
+        run: cp Jarvis/app/build/outputs/apk/debug/app-debug.apk Jarvis/Clithel.apk
       - name: Publicar release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ github.run_number }}
-          name: Jarvis v${{ github.run_number }}
-          files: Jarvis/Jarvis.apk
+          name: Clithel v${{ github.run_number }}
+          files: Jarvis/Clithel.apk
