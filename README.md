@@ -1,6 +1,6 @@
 # Jarvis para Android
 
-Asistente de voz personal para Android inspirado en JARVIS de Iron Man. Interfaz minimalista con un núcleo animado, conversación por voz y memoria propia. Usa Claude, de Anthropic, como cerebro.
+Asistente de voz personal para Android inspirado en JARVIS de Iron Man. Interfaz minimalista con un núcleo animado, conversación por voz y memoria propia. Usa Gemini, como cerebro.
 
 ## Qué hace
 
@@ -13,7 +13,7 @@ Asistente de voz personal para Android inspirado en JARVIS de Iron Man. Interfaz
 
 - Celular Android 11 o superior, de 64 bits (arm64-v8a).
 - Conexión a internet.
-- Una clave de API de Claude, que se crea en console.anthropic.com. El uso de la API tiene un costo según lo que consultes.
+- Una clave de API de Gemini, que se crea en aistudio.google.com/apikey. El uso de la API no tiene costo.
 
 ## Instalación
 
@@ -24,14 +24,14 @@ Asistente de voz personal para Android inspirado en JARVIS de Iron Man. Interfaz
 ## Primer uso
 
 1. Abre Jarvis y acepta el permiso del micrófono.
-2. Mantén presionado el núcleo y pega tu clave de API de Claude. Se guarda solo en tu celular.
+2. Mantén presionado el núcleo y pega tu clave de API de Gemini. Se guarda solo en tu celular.
 3. Toca el núcleo una vez, habla y espera la respuesta.
 4. Mientras habla, toca el núcleo otra vez para interrumpirlo.
 
 ## Privacidad
 
 - Tu clave de API y la memoria se guardan únicamente en el almacenamiento de tu celular.
-- Lo que dices se convierte en texto y se envía a la API de Claude para generar la respuesta.
+- Lo que dices se convierte en texto y se envía a la API de Gemini para generar la respuesta.
 - No incluyas tu clave de API en ningún archivo de este repositorio.
 
 ## Cómo se compila
@@ -40,7 +40,7 @@ Cada vez que se actualiza la rama main, GitHub Actions compila el proyecto y pub
 
 ## Tecnologías
 
-Kotlin, Jetpack Compose, Room, OkHttp, reconocimiento y síntesis de voz de Android y la API de Claude.
+Kotlin, Jetpack Compose, Room, OkHttp, reconocimiento y síntesis de voz de Android y la API de Gemini.
 
 ## Próximamente
 
