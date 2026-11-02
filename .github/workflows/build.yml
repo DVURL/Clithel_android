@@ -42,11 +42,16 @@ jobs:
         run: gradle $TASK --no-daemon
       - name: Buscar y renombrar APK
         run: |
-          find Jarvis -name "*.apk" -print -exec cp {} Clithem.apk \;
+          APK=$(find Jarvis/app/build/outputs/apk -name "*.apk" | head -1)
+          echo "APK encontrado: $APK"
+          cp "$APK" Clithel.apk
+      - name: Verificar firma
+        run: |
+          APKSIGNER=$(ls -d "$ANDROID_HOME"/build-tools/*/apksigner | tail -1)
+          "$APKSIGNER" verify --print-certs Clithel.apk
       - name: Publicar release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ github.run_number }}
-          name: Clithem v${{ github.run_number }}
-          files: Clithem.apk
-          
+          name: Clithel v${{ github.run_number }}
+          files: Clithel.apk
