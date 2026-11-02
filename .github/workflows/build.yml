@@ -31,10 +31,8 @@ jobs:
             echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/clithel.p12"
             echo "KEYSTORE_FILE=$RUNNER_TEMP/clithel.p12" >> "$GITHUB_ENV"
             echo "TASK=assembleRelease" >> "$GITHUB_ENV"
-            echo "APK=Jarvis/app/build/outputs/apk/release/app-release.apk" >> "$GITHUB_ENV"
           else
             echo "TASK=assembleDebug" >> "$GITHUB_ENV"
-            echo "APK=Jarvis/app/build/outputs/apk/debug/app-debug.apk" >> "$GITHUB_ENV"
           fi
       - name: Compilar
         working-directory: Jarvis
@@ -42,11 +40,13 @@ jobs:
           VERSION_CODE: ${{ github.run_number }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         run: gradle $TASK --no-daemon
-      - name: Renombrar APK
-        run: cp "$APK" Clithel.apk
+      - name: Buscar y renombrar APK
+        run: |
+          find Jarvis -name "*.apk" -print -exec cp {} Clithem.apk \;
       - name: Publicar release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ github.run_number }}
-          name: Clithel v${{ github.run_number }}
-          files: Clithel.apk
+          name: Clithem v${{ github.run_number }}
+          files: Clithem.apk
+          
