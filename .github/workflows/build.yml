@@ -19,14 +19,34 @@ jobs:
           gradle-version: 8.9
       - name: Descomprimir proyecto
         run: unzip -q "$(ls *.zip | head -1)"
+      - name: Configuración de la nube
+        run: |
+          mkdir -p Jarvis/app/src/main/assets
+          if [ -f cloud.json ]; then cp cloud.json Jarvis/app/src/main/assets/cloud.json; fi
+      - name: Preparar firma
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/clithel.p12"
+            echo "KEYSTORE_FILE=$RUNNER_TEMP/clithel.p12" >> "$GITHUB_ENV"
+            echo "TASK=assembleRelease" >> "$GITHUB_ENV"
+            echo "APK=Jarvis/app/build/outputs/apk/release/app-release.apk" >> "$GITHUB_ENV"
+          else
+            echo "TASK=assembleDebug" >> "$GITHUB_ENV"
+            echo "APK=Jarvis/app/build/outputs/apk/debug/app-debug.apk" >> "$GITHUB_ENV"
+          fi
       - name: Compilar
         working-directory: Jarvis
-        run: gradle assembleDebug --no-daemon
+        env:
+          VERSION_CODE: ${{ github.run_number }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        run: gradle $TASK --no-daemon
       - name: Renombrar APK
-        run: cp Jarvis/app/build/outputs/apk/debug/app-debug.apk Jarvis/Clithel.apk
+        run: cp "$APK" Clithel.apk
       - name: Publicar release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ github.run_number }}
           name: Clithel v${{ github.run_number }}
-          files: Jarvis/Clithel.apk
+          files: Clithel.apk
