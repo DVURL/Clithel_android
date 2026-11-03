@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-permissions:
-  contents: write
+    paths-ignore:
+      - '**.md'
 jobs:
   build:
     runs-on: ubuntu-latest
