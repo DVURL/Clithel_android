@@ -6,6 +6,7 @@ Asistente de voz personal para Android con unos ojos animados que cambian de col
 
 - **Conversa por voz:** escucha lo que dices y responde en voz alta, en el idioma de tu celular.
 - **Tu asistente, con tu nombre:** Clithel es la marca de la app, pero tú eliges cómo llamar a tu asistente en Ajustes. Con ese nombre te responde y es la palabra que escucha.
+- **Responde a tu voz sin tocar la pantalla:** di el nombre de tu asistente y empieza a escucharte. Funciona en tu celular, sin internet y sin servicios de Google.
 - **Ojos con emociones:** parpadean, miran a los lados y cambian de color según lo que hace: escuchando, pensando o hablando. Al responder puede verse feliz, triste, enojado o sorprendido.
 - **Widget:** los mismos ojos animados en la pantalla de inicio. Al tocarlo, Clithel empieza a escucharte.
 - **Etiquetas de apps:** ponles tu propio nombre a tus apps (por ejemplo "billar" para 8 Ball Pool, o "música" y "libros"). Después di "abre billar" y se abre directo, sin internet y sin gastar peticiones de Gemini.
@@ -16,7 +17,6 @@ Asistente de voz personal para Android con unos ojos animados que cambian de col
 - **Hábitos y recordatorios** con notificaciones tipo panel de control.
 - **Usa otras apps:** con el permiso de accesibilidad puede leer la pantalla, tocar botones y desplazarse.
 - **Lee en voz alta:** abre tu app de libros, lee el texto de la página y pasa de página.
-- **Escucha su nombre (experimental):** puedes activarlo para que responda cuando digas el nombre de tu asistente, sin tocar la pantalla.
 
 ## Requisitos
 
@@ -50,15 +50,19 @@ Para el widget: mantén presionada la pantalla de inicio, toca Widgets y busca C
 
 Las etiquetas también sirven para que Clithel sepa cuál es tu app de música o de libros cuando se lo pides.
 
-## Escuchar el nombre del asistente (experimental)
+## Llamar al asistente por su nombre
 
-En Ajustes, activa "Escuchar siempre". Clithel usa el reconocedor de voz de Android, que es gratuito y no pide claves. Aparecerá una notificación fija mientras escucha.
+1. En Ajustes, escribe el nombre que quieras para tu asistente.
+2. Activa "Escuchar siempre". La primera vez se descarga un modelo de voz en español de unos 40 MB, una sola vez.
+3. Cuando diga "Listo", aparece una notificación fija que dice "Escuchando". Di el nombre de tu asistente y, tras un bip corto, dile lo que necesitas.
 
+Cómo funciona y qué esperar:
+- Usa Vosk, un reconocedor de voz libre que corre en tu celular. No usa internet ni servicios de Google, y no hay pitidos repetidos.
 - Gasta más batería que usarlo tocando los ojos.
-- En algunos celulares puede sonar un pitido cuando reinicia la escucha.
-- Entiende mejor nombres comunes que palabras inventadas.
-- Si reinicias el celular, abre la app una vez para que vuelva a escuchar.
+- Los nombres inventados pueden fallar al principio. Si no responde, prueba con otro nombre o dilo más despacio y cerca del celular.
 - Se pausa mientras Clithel habla o lee, para no escucharse a sí mismo.
+- Si reinicias el celular, abre la app una vez para que vuelva a escuchar.
+- Para abrir apps desde fuera de la app, Android pide permisos extra. En Xiaomi, Redmi y Poco activa "Mostrar ventanas emergentes mientras se ejecuta en segundo plano" y "Mostrar sobre otras apps".
 
 ## Actualizaciones
 
@@ -86,9 +90,9 @@ Clithel revisa al abrirse si hay una versión nueva. También puedes tocar "Busc
 - Con cuenta, tus datos se guardan en un proyecto de Firebase, de Google: tu correo, tu nombre, el nombre de tu asistente, lo que Clithel recuerda de ti, tus últimas conversaciones, tus hábitos, tus etiquetas de apps y tus colores. Las reglas de la base de datos hacen que cada persona solo pueda ver sus propios datos.
 - Tu clave de Gemini no se sube a la nube: se queda en tu celular.
 - Puedes borrar tu cuenta y tus datos desde Ajustes. Al cerrar sesión, la memoria se borra del celular.
-- Lo que dices se convierte en texto y se envía a la API de Gemini para generar la respuesta. El plan gratuito de Gemini tiene límites y Google puede usar lo que le envías para mejorar sus productos. Evita contarle datos muy privados.
+- La escucha del nombre del asistente se procesa en tu celular y no se envía a ningún servidor.
+- Lo que le dices a Clithel después de llamarla se convierte en texto y se envía a la API de Gemini para generar la respuesta. El plan gratuito de Gemini tiene límites y Google puede usar lo que le envías para mejorar sus productos. Evita contarle datos muy privados.
 - Las órdenes con etiquetas, como "abre billar", se resuelven en tu celular y no se envían a Gemini.
-- Al escuchar su nombre, Clithel usa el reconocedor de voz de Android, que puede enviar el audio a los servicios de voz de Google.
 - La accesibilidad solo se usa cuando se lo pides y Clithel no guarda lo que lee en pantalla.
 - No incluyas tu clave de API en ningún archivo de este repositorio.
 
@@ -98,11 +102,11 @@ Cada vez que se actualiza el código, GitHub Actions compila una versión firmad
 
 ## Tecnologías
 
-Kotlin, Jetpack Compose, Room, OkHttp, widgets de Android, voz de Android, servicio de accesibilidad, Firebase (Authentication y Firestore) y la API de Gemini.
+Kotlin, Jetpack Compose, Room, OkHttp, widgets de Android, voz de Android, Vosk (reconocimiento de voz sin conexión), servicio de accesibilidad, Firebase (Authentication y Firestore) y la API de Gemini.
 
 ## Próximamente
 
-- Una activación por voz más precisa y de menor consumo.
+- Ser el asistente predeterminado del celular, para llamarlo con el botón de encendido.
 - Organización de archivos.
 - Carga de calendarios y hábitos.
 
@@ -111,5 +115,6 @@ Kotlin, Jetpack Compose, Room, OkHttp, widgets de Android, voz de Android, servi
 - Es una versión temprana y puede tener errores.
 - El widget solo se anima mientras la app está activa en segundo plano.
 - Android no deja que una app encienda o apague el Wi-Fi por su cuenta.
+- Android limita abrir otras apps cuando Clithel está en segundo plano. Hace falta dar los permisos extra indicados arriba.
 - Algunas apps protegen su texto y no permiten que se lea la pantalla.
-- La activación por nombre es experimental y puede fallar o consumir más batería.
+- Llamarla por su nombre puede fallar con nombres difíciles y gasta más batería.
