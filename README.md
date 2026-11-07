@@ -13,6 +13,7 @@ Asistente de voz personal para Android con unos ojos animados que cambian de col
 - **Cuenta y memoria:** inicia sesión o crea tu cuenta con correo y contraseña. Clithel guarda tu nombre, lo que le cuentas, tus hábitos, tus etiquetas y tus colores, y los recupera si reinstalas o cambias de celular.
 - **Colores y fondo a tu gusto:** siete paletas o un tono propio, y fondos como negro, azul noche, carbón, degradado, estrellas animadas o una foto tuya.
 - **Se actualiza desde la app:** avisa cuando hay una versión nueva, la descarga y abre el instalador.
+- **Reporte de errores:** si algo falla, un botón en Ajustes genera un reporte que puedes copiar para que se pueda arreglar.
 - **Controla el celular:** abre apps, llama, manda mensajes, pone alarmas y temporizadores, enciende la linterna y ajusta el volumen.
 - **Hábitos y recordatorios** con notificaciones tipo panel de control.
 - **Usa otras apps:** con el permiso de accesibilidad puede leer la pantalla, tocar botones y desplazarse.
@@ -64,6 +65,14 @@ Cómo funciona y qué esperar:
 - Si reinicias el celular, abre la app una vez para que vuelva a escuchar.
 - Para abrir apps desde fuera de la app, Android pide permisos extra. En Xiaomi, Redmi y Poco activa "Mostrar ventanas emergentes mientras se ejecuta en segundo plano" y "Mostrar sobre otras apps".
 
+## Si algo falla: reporte de errores
+
+1. Abre Ajustes y toca "Reporte de errores".
+2. Espera unos segundos a que termine de revisar.
+3. Toca "Copiar" (o "Compartir") y envía el texto a quien te ayuda.
+
+El reporte incluye la versión de la app, el modelo de tu celular, qué permisos tienes dados, si Gemini, GitHub y Firebase responden desde tu internet, y los últimos errores con su hora. No incluye tus claves, tu correo ni lo que has dicho. Si la app se cierra sola, la próxima vez que la abras te ofrece ver el reporte de ese cierre.
+
 ## Actualizaciones
 
 Clithel revisa al abrirse si hay una versión nueva. También puedes tocar "Buscar actualización" en Ajustes. Para instalarla, Android pedirá una vez permiso para instalar apps desde Clithel.
@@ -93,6 +102,7 @@ Clithel revisa al abrirse si hay una versión nueva. También puedes tocar "Busc
 - La escucha del nombre del asistente se procesa en tu celular y no se envía a ningún servidor.
 - Lo que le dices a Clithel después de llamarla se convierte en texto y se envía a la API de Gemini para generar la respuesta. El plan gratuito de Gemini tiene límites y Google puede usar lo que le envías para mejorar sus productos. Evita contarle datos muy privados.
 - Las órdenes con etiquetas, como "abre billar", se resuelven en tu celular y no se envían a Gemini.
+- El registro de errores se guarda solo en tu celular y no se envía a ningún lado. Únicamente sale si tú tocas "Copiar" o "Compartir".
 - La accesibilidad solo se usa cuando se lo pides y Clithel no guarda lo que lee en pantalla.
 - No incluyas tu clave de API en ningún archivo de este repositorio.
 
@@ -118,3 +128,4 @@ Kotlin, Jetpack Compose, Room, OkHttp, widgets de Android, voz de Android, Vosk 
 - Android limita abrir otras apps cuando Clithel está en segundo plano. Hace falta dar los permisos extra indicados arriba.
 - Algunas apps protegen su texto y no permiten que se lea la pantalla.
 - Llamarla por su nombre puede fallar con nombres difíciles y gasta más batería.
+- El reporte de errores solo cubre fallos dentro de la app, no los de la compilación en GitHub.
