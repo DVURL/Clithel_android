@@ -9,6 +9,8 @@ Asistente de voz personal para Android con unos ojos animados que cambian de col
 - **Responde a tu voz sin tocar la pantalla:** di el nombre de tu asistente y empieza a escucharte. Funciona en tu celular, sin internet y sin servicios de Google.
 - **Ojos con emociones:** parpadean, miran a los lados y cambian de color según lo que hace: escuchando, pensando o hablando. Al responder puede verse feliz, triste, enojado o sorprendido.
 - **Widget:** los mismos ojos animados en la pantalla de inicio. Al tocarlo, Clithel empieza a escucharte.
+- **Configuración guiada:** una lista con ✓ que te lleva paso a paso a activar permisos, notificaciones, accesibilidad y batería.
+- **Lee tus libros:** agrega tus PDF, EPUB o TXT y Clithel los lee en voz alta, recuerda dónde te quedaste y se controla por voz o desde la notificación.
 - **Etiquetas de apps:** ponles tu propio nombre a tus apps (por ejemplo "billar" para 8 Ball Pool, o "música" y "libros"). Después di "abre billar" y se abre directo, sin internet y sin gastar peticiones de Gemini.
 - **Cuenta y memoria:** inicia sesión o crea tu cuenta con correo y contraseña. Clithel guarda tu nombre, lo que le cuentas, tus hábitos, tus etiquetas y tus colores, y los recupera si reinstalas o cambias de celular.
 - **Colores y fondo a tu gusto:** siete paletas o un tono propio, y fondos como negro, azul noche, carbón, degradado, estrellas animadas o una foto tuya.
@@ -16,8 +18,7 @@ Asistente de voz personal para Android con unos ojos animados que cambian de col
 - **Reporte de errores:** si algo falla, un botón en Ajustes genera un reporte que puedes copiar para que se pueda arreglar.
 - **Controla el celular:** abre apps, llama, manda mensajes, pone alarmas y temporizadores, enciende la linterna y ajusta el volumen.
 - **Hábitos y recordatorios** con notificaciones tipo panel de control.
-- **Usa otras apps:** con el permiso de accesibilidad puede leer la pantalla, tocar botones y desplazarse.
-- **Lee en voz alta:** abre tu app de libros, lee el texto de la página y pasa de página.
+- **Usa otras apps:** con el permiso de accesibilidad puede leer la pantalla, tocar botones y desplazarse, y leer en voz alta lo que haya en otra app.
 
 ## Requisitos
 
@@ -36,10 +37,8 @@ Asistente de voz personal para Android con unos ojos animados que cambian de col
 
 1. Abre Clithel y crea tu cuenta, o toca "Continuar sin cuenta".
 2. Abre Ajustes (botón AJUSTES, o mantén presionados los ojos). Escribe tu nombre, el nombre que quieres para tu asistente y pega tu clave de Gemini.
-3. Toca "Dar permisos" y acepta micrófono, contactos, llamadas, SMS y notificaciones.
-4. Toca "Activar accesibilidad" y activa Clithel. En Android 13 o superior puede hacer falta entrar a "Ajustes de la app", tocar los tres puntos y elegir "Permitir ajustes restringidos".
-5. Toca "Probar notificación" para comprobar que los avisos funcionan.
-6. Toca los ojos, habla y espera la respuesta. Tócalos de nuevo para interrumpirla.
+3. Toca "Configuración guiada" y sigue la lista hasta que todo tenga ✓: permisos, notificaciones, accesibilidad y batería. En Android 13 o superior, para la accesibilidad puede hacer falta entrar a "Ajustes de la app", tocar los tres puntos y elegir "Permitir ajustes restringidos".
+4. Toca los ojos, habla y espera la respuesta. Tócalos de nuevo para interrumpirla.
 
 Para el widget: mantén presionada la pantalla de inicio, toca Widgets y busca Clithel.
 
@@ -49,7 +48,17 @@ Para el widget: mantén presionada la pantalla de inicio, toca Widgets y busca C
 2. Elige la app y escribe cómo quieres llamarla, por ejemplo "billar".
 3. Di "abre billar", "entra a mi aplicación de billar" o solo "billar". Se abrirá al instante.
 
-Las etiquetas también sirven para que Clithel sepa cuál es tu app de música o de libros cuando se lo pides.
+Las etiquetas también sirven para que Clithel sepa cuál es tu app de música o de libros cuando se lo pides. Si Android no deja abrir la app desde el fondo, aparece un aviso "Toca para abrir".
+
+## Mis libros
+
+1. En Ajustes, entra a "Mis libros" y toca "Agregar libro". Elige un PDF, EPUB o TXT.
+2. Di "léeme mi libro" o "léeme" y el título. Si tienes varios, Clithel reconoce el nombre aunque lo digas incompleto.
+3. Mientras lee, di "pausa", "continúa", "más rápido", "más lento", "repite" o "siguiente". También puedes usar los botones de la notificación o tocar los ojos para pausar.
+
+Clithel recuerda en qué parte te quedaste. Si dices solo "léeme" o "continúa", sigue con el último libro. Para leer la pantalla de otra app, di "lee la pantalla".
+
+Los PDF hechos de imágenes escaneadas todavía no se pueden leer.
 
 ## Llamar al asistente por su nombre
 
@@ -63,7 +72,7 @@ Cómo funciona y qué esperar:
 - Los nombres inventados pueden fallar al principio. Si no responde, prueba con otro nombre o dilo más despacio y cerca del celular.
 - Se pausa mientras Clithel habla o lee, para no escucharse a sí mismo.
 - Si reinicias el celular, abre la app una vez para que vuelva a escuchar.
-- Para abrir apps desde fuera de la app, Android pide permisos extra. En Xiaomi, Redmi y Poco activa "Mostrar ventanas emergentes mientras se ejecuta en segundo plano" y "Mostrar sobre otras apps".
+- Para abrir apps desde fuera de la app, Android pide permisos extra. En Xiaomi, Redmi y Poco activa "Mostrar ventanas emergentes mientras se ejecuta en segundo plano" y "Mostrar sobre otras apps". La Configuración guiada te lleva a cada uno.
 
 ## Si algo falla: reporte de errores
 
@@ -86,7 +95,8 @@ Clithel revisa al abrirse si hay una versión nueva. También puedes tocar "Busc
 - "Pon un temporizador de 5 minutos."
 - "Recuérdame hacer ejercicio todos los días a las 6 de la tarde."
 - "Enciende la linterna."
-- "Abre mis libros y léeme en voz alta."
+- "Léeme mi libro."
+- "Más rápido." (mientras lee)
 
 ## Si no te llegan los avisos
 
@@ -97,11 +107,12 @@ Clithel revisa al abrirse si hay una versión nueva. También puedes tocar "Busc
 ## Privacidad
 
 - Con cuenta, tus datos se guardan en un proyecto de Firebase, de Google: tu correo, tu nombre, el nombre de tu asistente, lo que Clithel recuerda de ti, tus últimas conversaciones, tus hábitos, tus etiquetas de apps y tus colores. Las reglas de la base de datos hacen que cada persona solo pueda ver sus propios datos.
+- Tus libros y el punto donde te quedaste se guardan solo en tu celular. No se suben a la nube.
 - Tu clave de Gemini no se sube a la nube: se queda en tu celular.
 - Puedes borrar tu cuenta y tus datos desde Ajustes. Al cerrar sesión, la memoria se borra del celular.
 - La escucha del nombre del asistente se procesa en tu celular y no se envía a ningún servidor.
 - Lo que le dices a Clithel después de llamarla se convierte en texto y se envía a la API de Gemini para generar la respuesta. El plan gratuito de Gemini tiene límites y Google puede usar lo que le envías para mejorar sus productos. Evita contarle datos muy privados.
-- Las órdenes con etiquetas, como "abre billar", se resuelven en tu celular y no se envían a Gemini.
+- Las órdenes con etiquetas y los comandos de lectura, como "abre billar" o "pausa", se resuelven en tu celular y no se envían a Gemini.
 - El registro de errores se guarda solo en tu celular y no se envía a ningún lado. Únicamente sale si tú tocas "Copiar" o "Compartir".
 - La accesibilidad solo se usa cuando se lo pides y Clithel no guarda lo que lee en pantalla.
 - No incluyas tu clave de API en ningún archivo de este repositorio.
@@ -112,20 +123,22 @@ Cada vez que se actualiza el código, GitHub Actions compila una versión firmad
 
 ## Tecnologías
 
-Kotlin, Jetpack Compose, Room, OkHttp, widgets de Android, voz de Android, Vosk (reconocimiento de voz sin conexión), servicio de accesibilidad, Firebase (Authentication y Firestore) y la API de Gemini.
+Kotlin, Jetpack Compose, Room, OkHttp, widgets de Android, voz de Android, Vosk (reconocimiento de voz sin conexión), PdfBox-Android (lectura de PDF), servicio de accesibilidad, Firebase (Authentication y Firestore) y la API de Gemini.
 
 ## Próximamente
 
 - Ser el asistente predeterminado del celular, para llamarlo con el botón de encendido.
 - Organización de archivos.
 - Carga de calendarios y hábitos.
+- Leer PDF escaneados.
 
 ## Limitaciones
 
 - Es una versión temprana y puede tener errores.
 - El widget solo se anima mientras la app está activa en segundo plano.
 - Android no deja que una app encienda o apague el Wi-Fi por su cuenta.
-- Android limita abrir otras apps cuando Clithel está en segundo plano. Hace falta dar los permisos extra indicados arriba.
+- Android limita abrir otras apps cuando Clithel está en segundo plano. Si no se abre sola, aparece un aviso "Toca para abrir".
 - Algunas apps protegen su texto y no permiten que se lea la pantalla.
+- Los PDF escaneados (de imágenes) todavía no se pueden leer en voz alta.
 - Llamarla por su nombre puede fallar con nombres difíciles y gasta más batería.
 - El reporte de errores solo cubre fallos dentro de la app, no los de la compilación en GitHub.
